@@ -1,0 +1,22 @@
+html {
+  background: #000;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.photos {
+  display: block;
+  font-size: 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.photo {
+  width: 800px;
+  box-shadow: 0 0 40px 7px rgba(0,0,0,0.75);
+}
