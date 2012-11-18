@@ -7,9 +7,25 @@
 	<script defer src="jquery-1.7.2.min.js"></script>
 	<script defer src="photo.js"></script>
 </head>
-
-<div class="photos">
-<% photos.each do |photo| %>
-	<img class="photo" src="<%= photo %>" />
-<% end %>
-</div>
+<body class="loading">
+	<div class="photos">
+	<% photos.take(8).each do |photo| %>
+		<div class="photo">
+			<img class="img" src="<%= photo %>" />
+			<a class="flag" title="Flag as pick" href="#"></a>
+			<div class="bwtoggle" title="Toggle black & white">
+				<a class="bw" href="#"></a>
+				<a class="color" href="#"></a>
+			</div>
+			<div class="rating">
+				<a href="#1" class="star _1" data-star="1"></a>
+				<a href="#2" class="star _2" data-star="2"></a>
+				<a href="#3" class="star _3" data-star="3"></a>
+				<a href="#4" class="star _4" data-star="4"></a>
+				<a href="#5" class="star _5" data-star="5"></a>
+			</div>
+		</div>
+	<% end %>
+	</div>
+</body>
+</html>
