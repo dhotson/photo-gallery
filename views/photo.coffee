@@ -78,10 +78,14 @@ $(window).keydown (e) ->
       rating = current().find('.rating')
         .addClass('show')
 
-      window.setTimeout(
+      id = rating.data('showtimer')
+      window.clearTimeout(id)
+
+      id = window.setTimeout(
         ->
           rating.removeClass('show')
         2000)
+      rating.data('showtimer', id)
 
       switch e.keyCode
         when 49
