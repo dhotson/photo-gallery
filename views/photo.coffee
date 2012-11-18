@@ -40,6 +40,7 @@ update = ->
     h_fast = 1.0 / (((ii*1.5) * (ii*1.5)) + 1)
     filter = 'perspective(500px) rotate3d(0, 1, 0, '+(-90 * (Math.atan(ii) / Math.PI))+'deg) translate3d(0,0,'+((1 - h) * -1000)+'px)'
     $(e).css {
+      position: 'absolute',
       display: 'inline-block',
       left: (Math.atan(ii / 3) * 500 - 400 + (g.w / 2)) + 'px',
       '-webkit-transform': filter,
