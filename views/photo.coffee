@@ -24,7 +24,8 @@ $('.photo').click ->
   g.toffset = $('.photo').index(this)
   up()
 
-$('.bwtoggle').click ->
+$('.bwtoggle').click (e) ->
+  e.preventDefault()
   $(this).toggleClass('selected')
   $(this).siblings('.img').toggleClass('bw')
 
@@ -65,7 +66,6 @@ g.current = current = ->
   $($('.photo')[Math.round(g.offset)])
 
 $(window).keydown (e) ->
-  # console.log(e.keyCode)
   switch e.keyCode
     when 80 # Flag as pick
       current().find('.flag').addClass('selected')
@@ -90,7 +90,6 @@ $(window).keydown (e) ->
 
       switch e.keyCode
         when 49
-          console.log 2
           current().find('.rating')
             .removeClass('_1 _2 _3 _4 _5')
             .addClass('_1')
@@ -115,6 +114,8 @@ $(window).keydown (e) ->
       g.toffset -= 1
     when 39, 32, 40
       g.toffset += 1
+    when 70
+      $('html')[0].webkitRequestFullScreen()
 
   # Bounds checking
   g.toffset = Math.min($('.photo').length - 1, Math.max(0, g.toffset))
