@@ -13,4 +13,4 @@ Run the server:
 
     ruby photo.rb
 
-Then open in a browser: http://localhost:4567
+Then open in a browser: [http://localhost:4567](http://localhost:4567)
